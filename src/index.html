@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>Reuben</h1>
+        <nav>
+            <ul>
+                <li><button>About</button></li>
+                <li><button>Settings</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="menu-container">
+            <menu>
+                <h2>Projects</h2>
+                <ul>
+                    <li>Aurora Ascend</li>
+                    <li>Nexus Innovate</li>
+                    <li>Echo Bloom</li>
+                    <li>Quantum Leap</li>
+                    <li>Crimson Tide</li>
+                    <li>Zenith Spark</li>
+                    <li>Project Genesis</li>
+                    <li>Starlight Initiative</li>
+                    <li>Urban Canvas</li>
+                    <li>Crestline Connect</li>
+                </ul>
+            </menu>
+        </div>
+        <div id="content-container">
+            <button id="create-project-button">  
+                <div id="text">Create New Project</div>          
+                <svg class="button-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                </svg>
+            </button>
+            <dialog id="create-project-dialog">
+                <form id="create-project-form">
+                    <h2>Project Details</h2>
+                    <label for="project-name">Project Name</label>
+                    <input required autofocus type="text" name="project-name" id="project-name" maxlength="20">
+                    <label for="project-due-date">Due Date</label>
+                    <input type="datetime-local" name="project-due-date" id="project-due-date">
+                    <button id="submit-create-project" type="submit">Create</button>
+                </form>
+            </dialog>
+        </div>
+    </main>
+    <footer>
+        <small id="copyright">&copy; 2025 Reuben Faltiska Enterprises. All rights reserved.</small>
+    </footer>
+</body>
+</html>
