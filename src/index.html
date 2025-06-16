@@ -1,63 +1,132 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <dialog id="adjust-due-date-dialog">
+      <form id="adjust-due-date-form" method="dialog">
+        <h2>Select New Due Date</h2>
+        <label for="adjust-due-date">Due Date</label>
+        <input
+          type="datetime-local"
+          name="adjust-due-date"
+          id="adjust-due-date"
+        />
+        <button id="submit-adjust-due-date" type="submit">Adjust</button>
+      </form>
+    </dialog>
+    <dialog id="task-details-dialog">
+      <h2 id="task-name-h2"></h2>
+      <p id="task-priority-para"></p>
+      <p id="task-status-para"></p>
+      <p id="task-description-para"></p>
+      <div class="button-container">
+        <button id="toggle-task-status-button">Toggle Status</button>
+        <button id="delete-task-button">Delete</button>
+      </div>
+    </dialog>
+    <dialog id="create-project-dialog">
+      <form id="create-project-form" method="dialog">
+        <h2>Project Details</h2>
+        <label for="project-name">Project Name</label>
+        <input
+          required
+          autofocus
+          type="text"
+          name="project-name"
+          id="project-name"
+          maxlength="30"
+        />
+        <label for="project-due-date">Due Date</label>
+        <input
+          type="datetime-local"
+          name="project-due-date"
+          id="project-due-date"
+        />
+        <button id="submit-create-project" type="submit">Create</button>
+      </form>
+    </dialog>
+    <dialog id="add-task-dialog">
+      <form id="add-task-form" method="dialog">
+        <h2>Task Details</h2>
+        <label for="task-name">Task Name</label>
+        <input
+          required
+          autofocus
+          type="text"
+          name="task-name"
+          id="task-name"
+          maxlength="30"
+        />
+        <label for="task-description">Description</label>
+        <textarea
+          id="task-description"
+          name="description"
+          rows="4"
+          cols="50"
+          placeholder="Enter task details..."
+        ></textarea>
+        <label for="task-priority">Priority</label>
+        <select id="task-priority" name="priority">
+          <option value="" selected>None</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+        <button id="submit-add-task" type="submit">Add</button>
+      </form>
+    </dialog>
     <header>
-        <h1>Reuben</h1>
-        <nav>
-            <ul>
-                <li><button>About</button></li>
-                <li><button>Settings</button></li>
-            </ul>
-        </nav>
+      <h1>TaskNest</h1>
+      <nav>
+        <ul>
+          <li><a href="https://github.com/Reuben-24/to-do-list" target="_blank" rel="noopener noreferrer">About</a></li>
+          <li><a href="https://github.com/Reuben-24" target="_blank" rel="noopener noreferrer">Author</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
-        <div id="menu-container">
-            <menu>
-                <h2>Projects</h2>
-                <ul>
-                    <li>Aurora Ascend</li>
-                    <li>Nexus Innovate</li>
-                    <li>Echo Bloom</li>
-                    <li>Quantum Leap</li>
-                    <li>Crimson Tide</li>
-                    <li>Zenith Spark</li>
-                    <li>Project Genesis</li>
-                    <li>Starlight Initiative</li>
-                    <li>Urban Canvas</li>
-                    <li>Crestline Connect</li>
-                </ul>
-            </menu>
+      <div id="menu-container">
+        <menu>
+          <h2>Projects</h2>
+          <ul id="projects-list-menu"></ul>
+        </menu>
+      </div>
+      <div id="content-container">
+        <div id="content-card">
+          <button id="create-project-button">
+            <div id="text">Create New Project</div>
+            <svg
+              class="button-icon"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+              ></path>
+            </svg>
+          </button>
         </div>
-        <div id="content-container">
-            <button id="create-project-button">  
-                <div id="text">Create New Project</div>          
-                <svg class="button-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                </svg>
-            </button>
-            <dialog id="create-project-dialog">
-                <form id="create-project-form">
-                    <h2>Project Details</h2>
-                    <label for="project-name">Project Name</label>
-                    <input required autofocus type="text" name="project-name" id="project-name" maxlength="20">
-                    <label for="project-due-date">Due Date</label>
-                    <input type="datetime-local" name="project-due-date" id="project-due-date">
-                    <button id="submit-create-project" type="submit">Create</button>
-                </form>
-            </dialog>
-        </div>
+      </div>
     </main>
     <footer>
-        <small id="copyright">&copy; 2025 Reuben Faltiska Enterprises. All rights reserved.</small>
+      <small id="copyright"
+        >&copy; 2025 Reuben Enterprises. All rights reserved.</small
+      >
     </footer>
-</body>
+  </body>
 </html>

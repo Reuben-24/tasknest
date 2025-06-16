@@ -4,7 +4,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack serve --config webpack.dev.js"
+    "dev": "webpack serve --config webpack.dev.js",
+    "lint": "eslint .",
+    "format": "prettier --check \"src/**/*.{js,jsx,ts,tsx,json,css,html}\"",
+    "format:fix": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,html}\""
   },
   "repository": {
     "type": "git",
@@ -18,9 +21,13 @@
   "homepage": "https://github.com/Reuben-24/to-do-list#readme",
   "description": "",
   "devDependencies": {
+    "@eslint/js": "^9.29.0",
     "css-loader": "^7.1.2",
+    "eslint": "^9.29.0",
+    "globals": "^16.2.0",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.3",
+    "prettier": "3.5.3",
     "style-loader": "^4.0.0",
     "webpack": "^5.99.9",
     "webpack-cli": "^6.0.1",

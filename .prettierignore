@@ -1,0 +1,10 @@
+# Ignore artifacts:
+node_modules
+dist
+.gitignore
+.prettierrc
+eslint.config.mjs
+notes.txt
+package-lock.json
+package.json
+webpack.dev.js

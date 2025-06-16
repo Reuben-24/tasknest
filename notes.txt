@@ -1,0 +1,28 @@
+detailsContainer.innerHTML = `
+        <div>
+            <div>
+                <h2>${project.name}</h2>
+                <div class="project-property">
+                    <p><strong>Due Date:</strong> ${formatDateTimeDisplay(project.dueDate)|| 'N/A'}</p>
+                    <button class="project-details-button" id="adjust-due-date-button">Adjust</button>
+                </div>
+                <div class="project-property">
+                    <p><strong>Status:</strong> ${project.isComplete ? 'Complete' : 'Active'}</p>
+                    <button class="project-details-button" id="toggle-complete-button">Toggle</button>
+                </div>
+            </div>
+            <div>
+                <h3>Tasks</h3>
+                <ul>
+                    ${project.tasks && project.tasks.length > 0 ?
+                        project.tasks.map(task => `<li>${task}</li>`).join('') :
+                        '<li>No Tasks Yet</li>'
+                    }
+                </ul>
+            </div>
+        </div>
+        <div id="project-details-bottom-buttons-container">
+            <button class="project-details-button" id="add-task-button">Add New Task</button>
+            <button class="project-details-button" id="delete-project-button">Delete Project</button>
+        </div>
+    `;
