@@ -402,3 +402,7 @@ dialog button:active {
   display: flex;
   gap: 20px;
 }
+
+input {
+  padding: 12px !important;
+}
